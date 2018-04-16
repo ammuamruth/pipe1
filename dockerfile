@@ -1,7 +1,3 @@
-FROM ubuntu
+FROM node:7-alpine
 
-RUN /bin/bash -c 'echo this would generally be apt-get'
-
-ENV myCustomEnvVar="This is a sample."\
-	otherEnvVar="This is also a sample."
-
+RUN apk add -U subversion
