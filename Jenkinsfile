@@ -1,11 +1,11 @@
 pipeline {
-	agent any
-	stages {
-		stage('example'){
-			steps {
-				echo 'hello world'
-				sh 'echo myCustomEnvVar = $myCustomEnvVar'
-			}
-		}
-	}
+    agent { dockerfile true }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+                sh 'svn --version'
+            }
+        }
+    }
 }
